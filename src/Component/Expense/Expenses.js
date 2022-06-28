@@ -6,7 +6,14 @@ import Card from "../UI/Card";
 const Expenses = (props) => {
   return (
     <Card className="expenses">
-      <ExpenseItem
+      {props.item.map((abc) => (
+        <ExpenseItem
+          date={abc.date}
+          title={abc.title}
+          amount={abc.amount}
+        />
+      ))}
+      {/* <ExpenseItem
         date={props.item[0].date}
         title={props.item[0].title}
         price={props.item[0].price}
@@ -20,7 +27,7 @@ const Expenses = (props) => {
         date={props.item[2].date}
         title={props.item[2].title}
         price={props.item[2].price}
-      />
+      /> */}
     </Card>
   );
 };
